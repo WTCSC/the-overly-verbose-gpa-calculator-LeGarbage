@@ -1,0 +1,126 @@
+oval "Start"
+
+arrow
+
+box "Input" bold "Class count" width 0
+
+arrow
+
+ellipse "Loop class count" "times" width 0
+
+arrow
+
+box "Input" bold "Class i GPA"
+
+arrow
+
+arrow from last.s \
+    down then down \
+    then left until even with last ellipse \
+    then up until even with last ellipse.s
+
+arrow from last box.e right
+
+box "Calculate average" "GPA" width 0
+
+arrow
+
+box "Output" bold "Average GPA"
+
+arrow
+
+box "Input" bold "Semester"
+
+arrow
+
+diamond "Is semester" "1?"
+
+arrow "No " rjust from last.s down
+
+box "Get second half" "of class list" width 0
+
+arrow "Yes" above from last diamond.e right
+
+box "Get first half" "of class list" width 0
+
+arrow right then right
+
+line from 2nd last box.e \
+    left until even with last \
+    then up until even with last
+
+right
+
+box "Calculate semester" "GPA" width 0 with .start at last arrow.end
+
+arrow
+
+box "Output" bold "Semester GPA" width 0
+
+arrow
+
+box "Output" bold "Overall GPA" width 0
+
+arrow
+
+box "Input" bold "Goal GPA"
+
+arrow
+
+diamond "Is goal already" "met?" width 0
+
+arrow "Yes" above
+
+box "Output" bold "Congrats"
+
+arrow
+
+oval "End"
+
+arrow "No " rjust down from last diamond.s
+
+ellipse "For each" "in classes"
+
+arrow
+
+box "Calculate new GPA" "with 4.0" width 0
+
+arrow
+
+diamond "Does new GPA" "meet goal?" width 0
+
+arrow "Yes " rjust
+
+box "Add it to" "goal classes"
+
+arrow down \
+    then left \
+    then left \
+    then left \
+    then up until even with last ellipse \
+    then right until even with last ellipse.w
+
+line "No" above from last diamond.w \
+    left until even with last.w
+
+arrow from last arrow.se right
+
+diamond "Is goal list" "empty?"
+
+arrow "Yes" above
+
+box "Output" bold "Too bad"
+
+arrow
+
+oval "End"
+
+arrow "No " rjust from last diamond.s down
+
+box "Output" bold "List goal classes" width 0
+
+right
+
+arrow
+
+oval "End"
